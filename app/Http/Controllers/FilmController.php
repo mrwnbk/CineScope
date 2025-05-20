@@ -51,14 +51,15 @@ class FilmController extends Controller
         $film = Film::find($id);
         return Inertia::render('detail', ['film' => $film]);
     }
-
+    
     /**
      * Show the form for editing the specified resource.
      */
     public function edit($id)
     {
+        $genres = Genre::all();
         $film = Film::find($id);
-        return Inertia::render('modifier', ['film' => $film]);
+        return Inertia::render('modifier', ['film' => $film, 'genres' => $genres]);
     }
 
     /**

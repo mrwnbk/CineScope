@@ -2,7 +2,7 @@ import AppLayout from "@/layouts/app-layout";
 import { router } from "@inertiajs/react";
 import { useState } from "react"
 
-export default function Create() {
+export default function Create({ genres }) {
 
     const [values, setValues] = useState({
         titre: '',
@@ -45,8 +45,12 @@ export default function Create() {
                     </div>
 
                     <div>
-                        <label className="block text-sm font-medium mb-1">Genre</label>
-                        <input type="text" name="genre" onChange={(e) => setValues({ ...values, genre: e.target.value })} className="w-full px-4 py-2 rounded-md bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-red-500" />
+                        <label className="block text-sm font-medium mb-1">Choisir un genre</label>
+                        <select className="bg-gray-700 rounded-md p-1" name="genre" id="" onChange={(e) => setValues({...values, genre: e.target.value})}>
+                            {genres.map((item) => (
+                                <option key={item.id} value={item.nom}>{item.nom}</option>
+                            ))}
+                        </select>
                     </div>
 
                     <button type="submit" className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-2 rounded-md transition">Ajouter</button>

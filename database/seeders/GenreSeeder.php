@@ -24,7 +24,7 @@ class GenreSeeder extends Seeder
                 'nom' => 'Drame'
             ],
             [
-                'nom' => 'Science-Fiction'
+                'nom' => 'Science-fiction'
             ],
             [
                 'nom' => 'Documentaire'
