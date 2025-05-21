@@ -45,8 +45,8 @@ export default function Create({ genres }) {
                     </div>
 
                     <div>
-                        <label className="block text-sm font-medium mb-1">Choisir un genre</label>
                         <select className="bg-gray-700 rounded-md p-1" name="genre" id="" onChange={(e) => setValues({...values, genre: e.target.value})}>
+                            <option value="" selected disabled>Choisir un genre</option>
                             {genres.map((item) => (
                                 <option key={item.id} value={item.nom}>{item.nom}</option>
                             ))}
